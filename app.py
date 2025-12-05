@@ -7,6 +7,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from openai import OpenAI
 from dotenv import load_dotenv # <-- PASSO 1: Importar a biblioteca dotenv
+from flask import send_file
 
 load_dotenv() # <-- PASSO 2: Carregar as variáveis do arquivo .env
 
@@ -1107,7 +1108,9 @@ def home():
     </html>
     """
 
-
+@app.route('/')
+def home():
+    return send_file('index.html')
 
 # ===================================================================
 # == INICIALIZAÇÃO DO SERVIDOR                                   ==
