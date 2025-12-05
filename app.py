@@ -1091,6 +1091,24 @@ def ask_agent():
         print(f"!!! Erro ao chamar a API da OpenAI: {e}")
         return jsonify({"error": "Desculpe, não consegui processar sua solicitação no momento. Verifique o terminal do servidor para mais detalhes."}), 500
 
+
+@app.route('/')
+def home():
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Quantum Team API</title>
+    </head>
+    <body>
+        <h1>✨ Quantum Team API está online!</h1>
+        <p>Use os endpoints da API para interagir com os agentes.</p>
+    </body>
+    </html>
+    """
+
+
+
 # ===================================================================
 # == INICIALIZAÇÃO DO SERVIDOR                                   ==
 # ===================================================================
